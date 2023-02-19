@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "chirag-data"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "chirag_data"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+
+torch = { version = "^1.13.1", source = "pytorch" }
+numpy = "^1.24.2"
+scipy = "^1.10.0"
+pyg-lib = "^0.1.0+pt113cpu"
+torch-scatter = "^2.1.0+pt113cpu"
+torch-sparse = "^0.6.16+pt113cpu"
+torch-cluster = "^1.6.0+pt113cpu"
+torch-spline-conv = "^1.2.1+pt113cpu"
+torch-geometric = "^2.2.0"
+matplotlib = "^3.7.0"
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cpu"
+default = false
+secondary = true
+
+
+[[tool.poetry.source]]
+name = "pyg"
+url = "https://data.pyg.org/whl/torch-1.13.0+cpu.html"
+default = false
+secondary = false
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.21.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
